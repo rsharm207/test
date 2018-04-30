@@ -3,8 +3,7 @@ phases:
   install:
     commands:
       - npm install time
-      - aws cloudformation package --template-file samTemplate.yaml --s3-bucket redbridge-deploy-stage 
-                                   --output-template-file outputSamTemplate.yaml
+      - aws cloudformation package --template-file samTemplate.yaml --s3-bucket redbridge-deploy-stage --kms-key-id 01f0beac-ec46-4328-bc9e-e923d4aa047b --output-template-file outputSamTemplate.yaml
 artifacts:
   type: zip
   files:
